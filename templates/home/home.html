@@ -1,12 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevPythonBr Cursos</title>
-</head>
-<body>
-    <h1>Oi Dev!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <br>
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-5 col-sm-4">
+                                <img src="media/fullstack.png" class="img-fluid w-100" alt="card-horizontal-image">
+                            </div>
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                <h5 class="card-title">Full Stack</h5>
+                                <p class="card-text">Python + Django + PostgreSQL + HTML + CSS + JS + React</p>
+                                <p class="card-text"><small class="text-muted">Venha ser um full stack.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-5 col-sm-4">
+                                <img src="media/backend.png" class="img-fluid w-100" alt="card-horizontal-image">
+                            </div>
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                <h5 class="card-title">Backend</h5>
+                                <p class="card-text">Python + Django + PostgreSQL</p>
+                                <p class="card-text"><small class="text-muted">Venha ser um backend.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-5 col-sm-4">
+                                <img src="media/frontend.png" class="img-fluid w-100" alt="card-horizontal-image">
+                            </div>
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                <h5 class="card-title">Frontend</h5>
+                                <p class="card-text">HTML + CSS + JS + React</p>
+                                <p class="card-text"><small class="text-muted">Venha ser um frontend.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-5 col-sm-4">
+                                <img src="media/database.png" class="img-fluid w-100" alt="card-horizontal-image">
+                            </div>
+                            <div class="col-7 col-sm-8">
+                                <div class="card-body">
+                                <h5 class="card-title">Database</h5>
+                                <p class="card-text">SQL e PostgreSQL</p>
+                                <p class="card-text"><small class="text-muted">Venha aprender banco de dados.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                </div>
+                <div class="col-xl-6 pt-3 text-center text-white">
+                    <div>
+                        <h1>Faaala Dev!</h1>
+                        <br>
+                        <h4>Aprenda a programar de verdade e sem promessas falsas. Aqui na DevPythonBr Cursos, você terá que estudar, praticar, praticar e praticar para alcançar seus objetivos.</h4>
+                        <br>
+                        <p>Escolha o que estudar, não fique preso em um único modelo de assinatura. Escolha se quer fazer uma assinatura, comprar um pacote ou um curso avulso.</p>
+                        <ul class="logos-programacao bottom-div">
+                            <li><img src="media/python.png" width="50" alt="Python"></li>
+                            <li><img src="media/django.png" width="50" alt="Python"></li>
+                            <li><img src="media/js.png" width="50" alt="Python"></li>
+                            <li><img src="media/html.png" width="50" alt="Python"></li>
+                            <li><img src="media/css.png" width="50" alt="Python"></li>
+                            <li><img src="media/postgresql.png" width="50" alt="Python"></li>
+                            <li><img src="media/git.png" width="50" alt="Python"></li>
+                            <li><img src="media/github.png" width="50" alt="Python"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
