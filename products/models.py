@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+from tinymce import models as tiny_models
 
 
 class Course(models.Model):
@@ -7,7 +7,7 @@ class Course(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     subtitle = models.CharField(max_length=255)
     workload = models.IntegerField()
-    content = models.TextField()
+    content = tiny_models.HTMLField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -24,7 +24,7 @@ class Formation(models.Model):
     subtitle = models.CharField(max_length=255)
     workload = models.IntegerField()
     number_of_courses = models.IntegerField()
-    content = models.TextField()
+    content = tiny_models.HTMLField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
