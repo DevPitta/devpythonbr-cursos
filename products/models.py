@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from tinymce import models as tiny_models
 
 
@@ -12,10 +13,13 @@ class Course(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['-title']
 
     def __srt__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("course:detail", kwargs={"slug": self.slug})
 
 
 class Formation(models.Model):
@@ -29,7 +33,10 @@ class Formation(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['-title']
 
     def __srt__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("course:detail", kwargs={"slug": self.slug})

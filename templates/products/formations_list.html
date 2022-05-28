@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}DevPythonBr | Formações{% endblock %}
+
+{% block main %}
+
+{% for formation in formations %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 p-4">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ formation.title }}</h5>
+                        <p class="card-text">{{ formation.subtitle }}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Conheça a formação</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

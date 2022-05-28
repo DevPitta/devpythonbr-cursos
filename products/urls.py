@@ -1,8 +1,9 @@
 from django.urls import path
-from products.views import FormationsTemplateView, CoursesTemplateView
+from products.views import FormationsListView, CoursesListView
 
+app_name = 'products'
 
 urlpatterns = [
-    path('formations/', FormationsTemplateView.as_view(), name='formations'),
-    path('courses/', CoursesTemplateView.as_view(), name='courses'),
+    path('formations/', FormationsListView.as_view(), name='formations'),
+    path('courses/', CoursesListView.as_view(), name='courses'),
 ]

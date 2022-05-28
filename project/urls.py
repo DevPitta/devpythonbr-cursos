@@ -21,6 +21,6 @@ from project import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
-    path('', include('home.urls')),
-    path('', include('products.urls')),
+    path('', include('home.urls', namespace='home')),
+    path('', include('products.urls', namespace='products')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
