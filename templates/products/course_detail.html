@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}DevPythonBr | Cursos{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 pt-2">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                <h2>{{ object.title }}</h2>
+                <h3>{{ object.subtitle }}</h3>
+                <p>{{ object.workload }}</p>
+                <p>{{ object.number_of_courses }}</p>
+                <p>{{ object.content|safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

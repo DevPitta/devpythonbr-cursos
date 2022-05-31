@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'tinymce',
     'home',
     'products',
+    'about',
 ]
 
 MIDDLEWARE = [

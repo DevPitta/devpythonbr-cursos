@@ -19,7 +19,7 @@ class Course(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("course:detail", kwargs={"slug": self.slug})
+        return reverse("products:course-detail", kwargs={"slug": self.slug})
 
 
 class Formation(models.Model):
@@ -39,4 +39,4 @@ class Formation(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("course:detail", kwargs={"slug": self.slug})
+        return reverse("products:formation-detail", kwargs={"slug": self.slug})

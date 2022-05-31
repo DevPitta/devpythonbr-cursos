@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from products.models import Course, Formation
 
 
@@ -12,6 +12,16 @@ class CoursesListView(ListView):
         return context
 
 
+class CourseDetailView(DetailView):
+    model = Course
+    template_name = 'products/course_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['course'] = Course.objects.all()
+        return context
+
+
 class FormationsListView(ListView):
     model = Formation
     template_name = 'products/formations_list.html'
@@ -19,4 +29,14 @@ class FormationsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['formations'] = Formation.objects.all()
+        return context
+
+
+class FormationDetailView(DetailView):
+    model = Formation
+    template_name = 'products/formation_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['formation'] = Formation.objects.all()
         return context
