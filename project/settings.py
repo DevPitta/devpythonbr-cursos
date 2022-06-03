@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',
+    'crispy_forms',
     'home',
     'products',
     'about',
@@ -116,6 +117,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Log in and Log out Configurations
+
+LOGIN_REDIRECT_URL = "/accounts/profile"
+LOGOUT_REDIRECT_URL = "/accounts/login"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -173,3 +178,9 @@ TINYMCE_SPELLCHECKER = True
 
 # Set dict language for tinymce spellchecker
 enchant.dict_exists('pt_BR')
+
+# CRISPY FORMS - BOOTSTRAP 4
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
