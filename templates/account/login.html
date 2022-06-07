@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load socialaccount %}
+
+{% block title %} DevPythonBr Cursos | Login {% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4 pt-5 pb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body p-5">
+                    <div class="text-center">
+                        <h2>Faaala Dev!</h2>
+                        <p>Faça seu login, estude e pratique muito!</p>
+                    </div>
+                    <div>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <p><a href="{% url 'account_reset_password' %}">Esqueci minha senha</a></p>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary mt-2 mb-2">Entrar</button>
+                            </div>
+                            <p class="text-center">Não tem uma conta? <a href="{% url 'account_signup' %}">Registre-se</a></p>
+                            <div class="center-buttons gap-xl-5">
+                                <a class="btn btn-outline-google col-xl-5" href="{% provider_login_url 'google' %}">Entrar com Google</a>
+                                <a class="btn btn-outline-github col-xl-5" href="{% provider_login_url 'github' %}">Entrar com Github</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

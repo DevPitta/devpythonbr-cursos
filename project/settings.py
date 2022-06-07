@@ -45,12 +45,38 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # Distributed
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
     'tinymce',
+    'anymail',
     'crispy_forms',
+
+    # Custom
     'home',
     'products',
     'about',
 ]
+
+# Allauth Site Configuration
+# SITE_ID = 2
+
+# Allauth Providers
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {}, 'google': {}
+}
+
+# Allauth Providers Configuration
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_LOGIN_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,10 +143,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 # Log in and Log out Configurations
 
 LOGIN_REDIRECT_URL = "/accounts/profile"
-LOGOUT_REDIRECT_URL = "/accounts/login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
+ACCOUNT_SIGNUP_REDIRECT_URL = "/accounts/login"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -183,4 +217,15 @@ enchant.dict_exists('pt_BR')
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+# E-mail
 
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = env('EMAIL')
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+ANYMAIL = {
+    "MAILGUN_API_KEY": env('MAILGUN_API_KEY'),
+    "MAILGUN_SENDER_DOMAIN": env('MAILGUN_SENDER_DOMAIN'),
+}
+
+# E-mail Allauth - Password Reset
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "DevPythonBr Cursos - "
