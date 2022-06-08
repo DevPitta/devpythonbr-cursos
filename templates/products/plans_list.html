@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}DevPythonBr | Planos{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+    <div class="row card-center">
+        {% for plan in plans %}
+        <div class="col-xl-4 p-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h2 class="card-title">{{ plan.title }}</h2>
+                        <p class="card-title">{{ plan.subtitle }}</p>
+                    </div>
+                    <p class="card-text">{{ plan.content|safe }}</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary btn-lg">Matricule-se</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

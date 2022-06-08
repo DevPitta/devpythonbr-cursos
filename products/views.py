@@ -1,5 +1,15 @@
 from django.views.generic import ListView, DetailView
-from products.models import Course, Formation
+from products.models import Plan, Course, Formation
+
+
+class PlansListView(ListView):
+    model = Plan
+    template_name = 'products/plans_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['plans'] = Plan.objects.all()
+        return context
 
 
 class CoursesListView(ListView):

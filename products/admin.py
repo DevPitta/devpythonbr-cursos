@@ -1,5 +1,11 @@
 from django.contrib import admin
-from products.models import Formation, Course
+from products.models import Plan, Formation, Course
+
+
+@admin.register(Plan)
+class PlanAdmin(admin.ModelAdmin):
+    list_display = ['title', 'subtitle', 'created', 'updated']
+    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(Formation)

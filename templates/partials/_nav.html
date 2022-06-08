@@ -30,11 +30,14 @@
                     </ul>
                     <div class="col-xl">
                         <ul class="navbar-nav nav-item-end">
-                            <li class="nav-item pt-2 pe-4">
+                            <li class="nav-item pt-2 pe-2">
                                 <a class="nav-link active" aria-current="page" href="{% url 'account_login' %}"> <i class="bi bi-box-arrow-in-right"></i>Entrar</a>
                             </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-outline-matricula"> <a class="nav-link active" href="#">Assinaturas</a> </button>
+                            <li class="nav-item pt-3 pe-4 text-white">
+                                <p>|</p>
+                            </li>
+                            <li class="nav-item pt-2">
+                                <a class="btn btn-outline-matricula nav-link active" href="{% url 'products:plans-list' %}">Matricule-se</a>
                             </li>
                         </ul>
                     </div>

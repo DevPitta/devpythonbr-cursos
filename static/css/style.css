@@ -113,3 +113,9 @@
 .text-justify {
     text-align: justify;
 }
+
+/* Products - Plan Page */
+
+.card-center {
+    justify-content: center;
+}
